@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get Product By Category</title>
+</head>
+<body>
+	<h1>Get Product By Category</h1>
+    
+	<a href="/home">Back</a><br>
+	<a href="/logout">logout</a> 
+	<br>
+	<br>
+        <form method="post">
+        Category:
+		<select name="category">
+		<% for(var i=0; i < pList.length; i++){ %>
+		    <option value="<%= pList[i].category %>"><%= pList[i].category %></option>
+		<% } %>
+	    </select> ||
+		Sub-Category:
+		<select name="subcategory">
+		<option value="all" selected>All</option>
+		<% for(var i=0; i < pList.length; i++){ %>
+		    <option value="<%= pList[i].subcategory %>"><%= pList[i].subcategory %></option>
+		<% } %>
+	    </select> ||
+		Brand:
+		<select name="brand">
+		<option value="all" selected>All</option>
+		<% for(var i=0; i < pList.length; i++){ %>
+		    <option value="<%= pList[i].brand %>"><%= pList[i].brand %></option>
+		<% } %>
+	    </select>
+		
+		<br>
+		
+		    <input type="submit" name="search" value="Search">
+        </form>
+</body>
+</html>

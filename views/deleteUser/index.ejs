@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User List</title>
+</head>
+<body>
+	<h1>User List</h1>
+    
+	<a href="/home">Back</a><br>
+	<a href="/logout">logout</a> 
+	<br>
+	<br>
+
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Email</th>
+			<th>TYPE</th>
+			
+
+		</tr>
+
+		<% for(var i=0; i < pList.length; i++){ %>
+		<tr>
+			<td><%= pList[i].id %></td>
+			<td><%= pList[i].email %></td>
+			<td><%= pList[i].type %></td>
+			<td>
+				<form method="post">
+		            <input type="hidden" name="uuid" value="<%=pList[i].id%>">
+		            <input type="submit" name="delete" value="Delete">
+                </form>
+				
+			</td>
+		</tr>
+		<% } %>
+	</table>
+</body>
+</html>

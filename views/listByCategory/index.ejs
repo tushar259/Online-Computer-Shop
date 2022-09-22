@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Home</title>
+
+    </head>
+
+    <body>
+			
+		    <a href="/logout">Logout</a>
+		
+		<br><br><br>
+		
+		<p>PRODUCTS</p>
+		
+		<br><br><br><br>
+		
+		<% for(var i=0; i < pList.length; i++){ %>
+		    <img src="Images/computer.jpg" height="150" width="200">
+			<h3>Category: <%= pList[i].category %></h3>
+	    	<h3>Sub-Category: <%= pList[i].subcategory %></h3>
+			<h3>Brand: <%= pList[i].brand %></h3>
+			<h3>Review: <%= pList[i].review %></h3>
+	    	<h3>Price: <%= pList[i].cost %> Tk</h3>
+			<a href="/addToCart/<%= pList[i].id %>">Add To Cart</a>
+			
+			<br><br>
+		
+		<% } %>
+
+
+    </body>
+
+</html>

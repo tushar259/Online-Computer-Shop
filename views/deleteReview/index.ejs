@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete Review</title>
+</head>
+<body>
+	<h1>Delete Review</h1>
+    
+	<a href="/home">Back</a><br>
+	<a href="/logout">logout</a> 
+	<br>
+	<br>
+
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Review</th>
+			
+			
+
+		</tr>
+
+		<% for(var i=0; i < pList.length; i++){ %>
+		<tr>
+			<td><%= pList[i].id %></td>
+			<td><%= pList[i].review %></td>
+			
+			<td>
+				<form method="post">
+		            <input type="hidden" name="uuid" value="<%=pList[i].id%>">
+		            <input type="submit" name="delete" value="Delete Review">
+                </form>
+				
+			</td>
+		</tr>
+		<% } %>
+	</table>
+</body>
+</html>
